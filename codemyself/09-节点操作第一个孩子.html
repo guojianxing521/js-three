@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>哈哈哈你</li>
+			<li>成都市房产</li>
+			<li>西昌在线</li>
+			<li>士大夫</li>
+		</ul>
+		<ol></ol>
+		<script>
+			var aUl =document.getElementsByTagName('ul')[0];
+//			aUl.children[0].style.backgroundColor='red';
+			//a.firstChild 只读属性 a的第一个孩子
+			//标准浏览器的第一个孩子为文本，非标准浏览器的第一个孩子为li
+			//文本无法设置背景颜色
+//			console.log(aUl.firstChild);
+//			aUl.firstChild.style.backgroundColor='red';//标准浏览器文本，没有背景颜色
+//			
+//			
+//			//标准浏览器还有一个方法firstElementChild
+//			
+//			
+//			//兼容
+//			var child = aUl.firstElementChild || aUl.children[0];
+//			if(child&&child.nodeType==1){//防止ul为空以及为空白文本
+//			child.style.backgroundColor = 'pink';
+//			}
+			//封装一个获取某个元素里面的第一个元素子节点
+			function first(obj){
+			var child = obj.firstElementChild || obj.children[0];
+			if(child&&child.nodeType==1){//防止ul为空以及为空白文本
+//			child.style.backgroundColor = 'pink';
+                    return child;
+			}else{
+				return null;
+			}
+		   }
+			
+			if(first(aUl)){
+				first(aUl).style.backgroundColor ='red';
+			}else{
+				console.log('没有');
+			};
+//			var aOl = document.getElementsByTagName('ol')[0];
+//			if(first(aOl)){
+//				first(aOl).style.backgroundColor ='red';
+//			}else{
+//				alert('没有该子元素');
+//			};
+		</script>
+	</body>
+</html>

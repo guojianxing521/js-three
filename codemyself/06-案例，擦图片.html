@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 52px;
+				height: 60px;
+				background: url(pic.jpg) no-repeat;
+				position: absolute;
+				opacity:0;
+				transition: 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<script>
+		//首先在页面上生成100个div,通过定位放置在页面上
+		//每一个小div的left和top不一样
+		//然后隐藏，鼠标移上去显示出来onmouseover
+		var str='';
+		for(var i=0;i<100;i++){
+			var l=i%10*53;//0*52 1*52   9*52
+			var t=parseInt(i/10)*61;
+			str+="<div class='box' style='left:"+l+"px;top:"+t+"px;background-position:"+-l+"px "+-t+"px;'></div>";
+			
+		}
+		document.body.innerHTML=str;
+//		console.log(str);
+		var aDiv = document.getElementsByTagName('div');
+		for(var i=0;i<100;i++){
+			aDiv[i].onmouseover= function(){
+					this.style.opacity='1';
+			}
+		}
+		</script>
+	</body>
+</html>

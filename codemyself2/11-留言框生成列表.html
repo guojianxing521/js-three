@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 250px;
+				height:300px;
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<span>小花:</span>
+		<input type="text" />
+		<input type="button" value="发送"/>
+		<script>
+			var aDiv = document.getElementsByTagName('div')[0];
+			var aSpan = document.getElementsByTagName('span')[0];
+			var aIpt = document.getElementsByTagName('input');
+			var str='';
+			//给发送按钮添加点击事件，获取text的内容，放到div里面
+			aIpt[1].onclick= function(){
+				str='<li>'+aSpan.innerHTML+aIpt[0].value+'</li>';
+				aDiv.innerHTML +=str;
+			}
+			aSpan.onclick = function(){
+				if(this.innerHTML=='小花:'){//innerHTML可以获取空格，文本后面的不会显示
+					this.innerHTML='小明:';
+				}else{
+					this.innerHTML='小花:';
+				}
+			}
+//aSpan.onclick = function(){
+//	if(this.innerHTML=='小花'){
+//		this.innerHTML=='小明';//错误
+//		
+//	}else{
+//		this.innerHTML=
+//	}
+//}
+//			aSpan.onclick = function() {
+//			
+//			if(this.innerHTML == "小明:") {
+//				aSpan.innerHTML = "小花:";
+//			}else{
+//				aSpan.innerHTML = "小明:";
+//			}
+//		}
+		</script>
+	</body>
+</html>

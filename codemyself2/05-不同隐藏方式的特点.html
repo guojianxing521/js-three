@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.one{
+				width: 100px;
+				height: 100px;
+				/*background-color: red;*/
+			    background-color: transparent ;
+				/*只是让盒子变透明，加个边框和文字就露馅了*/
+			 
+			}
+			.two{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">我是第一个盒子</div>
+		<div class="two">我是第二个盒子</div>
+		<script>
+			var aDiv=document.getElementsByTagName('div')[0];
+
+			aDiv.onmouseover = function(){
+				alert('触发了');
+			}
+		//			aDiv.style.display= 'none';//这种方式不占位，不能点击
+//          aDiv.style.visibility= 'hidden';//占位，不能点击
+//         aDiv.style.opacity='0';//占位，可以点击
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>	
+		<li>花花蝴蝶</li>
+		<li>撒大苏打</li>
+		<li>啊风水大师</li>
+		<li>额度发热</li>
+		<li>第三方</li>
+		</ul>
+		<script>
+			/*移到到哪个li身上 让当前的li的下一个兄弟背景颜色为aqua
+		如果没有前一个兄弟 那么则让自己背景为aqua*/
+//			var aLi = document.getElementsByTagName('li');
+//			for(var i=0;i<aLi.length;i++){
+//			aLi[i].onmouseover = function (){
+//				this.nextElementSibling.style.backgroundColor = 'aqua';
+//			}
+//			}
+var aLi = document.getElementsByTagName('li');
+//			for(var i=0;i<aLi.length;i++){
+//			aLi[i].onmouseover = function (){
+//				this.nextElementSibling.style.backgroundColor = 'aqua';
+//			}
+//			}
+
+			for(var i=0;i<aLi.length;i++){
+			
+			aLi[i].onmouseover = function (){
+			 for(var i=0;i<aLi.length;i++){
+					aLi[i].style.backgroundColor = '';
+				}
+			if(this.previousElementSibling){
+				this.previousElementSibling.style.backgroundColor = 'aqua';
+			}else{
+				this.style.backgroundColor ='pink';
+			}
+			}
+			}
+
+		</script>
+	</body>
+</html>

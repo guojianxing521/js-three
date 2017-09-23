@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>jsdhjkua </li>
+			<li>f  f </li>
+			<li>dfgbvvbc</li>
+			<li>rtfgrfds</li>
+			<li>dfsg</li>
+		</ul>
+		<script>
+			var aUl = document.getElementsByTagName('ul')[0];
+			//标准浏览器获取空白文本和标签
+			//非标准只获取标签
+			console.log(aUl.childNodes);
+			//所有浏览器只获取标签
+			console.log(aUl.children);
+			//案例：实现隔行变色
+//			for(var i=0;i<aUl.children.length;i++){
+//				if(i%2){
+//					aUl.children[i].style.backgroundColor = 'red';
+//				}else{
+//					aUl.children[i].style.backgroundColor = 'pink';
+//				}
+//			}
+       var k=0;
+	for(var i=0;i<aUl.childNodes.length;i++){
+				if(aUl.childNodes[i].nodeType == 1){
+					k++;
+					if(k%2){
+					aUl.childNodes[i].style.backgroundColor = 'red';
+				}else{
+					aUl.childNodes[i].style.backgroundColor = 'pink';
+				}
+				}
+			}
+		</script>
+	</body>
+</html>

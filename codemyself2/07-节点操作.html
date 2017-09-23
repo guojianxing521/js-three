@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" title="节点操作"> 	
+			box
+		<!--hhhhhh-->
+		</div>
+			<input type="text" value="haha"/>用户名
+		
+		<script>
+				/*dom(xml   html)
+		dom 所有的节点类型           节点类型nodeType
+		元素(标签)节点　　     Node.ELEMENT_NODE(1) 1
+		属性节点　　             Node.ATTRIBUTE_NODE(2) 2
+		文本节点　　           Node.TEXT_NODE(3) 3
+		CDATA节点    Node.CDATA_SECTION_NODE(4)
+		实体引用名称节点　　 Node.ENTRY_REFERENCE_NODE(5)
+		实体名称节点　　 Node.ENTITY_NODE(6)
+		处理指令节点　 Node.PROCESSING_INSTRUCTION_NODE(7)
+		注释节点　 Node.COMMENT_NODE(8) 8
+		文档节点　 Node.DOCUMENT_NODE(9) 
+		文档类型节点　　 Node.DOCUMENT_TYPE_NODE(10) 10
+		文档片段节点　　 Node.DOCUMENT_FRAGMENT_NODE(11) 
+		DTD声明节点 Node.NOTATION_NODE(12) -- >*/
+		var aDiv = document.getElementsByTagName('div')[0];
+		var aIpt = document.getElementsByTagName('input')[0];
+		//对于元素和文档，它们的nodeValue不可用，为null
+		//元素
+//		console.log(aDiv.nodeType);
+//		console.log(aDiv.nodeName);
+//		console.log(aDiv.nodeValue);
+//		//属性
+//		console.log(aDiv.attributes);//[id title ]
+//		console.log(aDiv.attributes[0]);
+//		console.log(aDiv.attributes[1]);
+//		console.log(aDiv.attributes[0].nodeType);
+//		console.log(aDiv.attributes[0].nodeName);
+//		console.log(aDiv.attributes[0].nodeValue);
+//		//文本
+//		
+//		console.log(aDiv.childNodes[0].nodeType);
+//		console.log(aDiv.childNodes[0].nodeName);
+//		console.log(aDiv.childNodes[0].nodeValue);
+//		注释
+//		console.log(aDiv.childNodes)
+//       console.log(aDiv.childNodes[1].nodeType);
+//        console.log(aDiv.childNodes[1].nodeName);
+//        console.log(aDiv.childNodes[1].nodeValue);
+//文档
+    console.log(document.childNodes[0]);
+    console.log(document.childNodes[0].nodeType);
+      console.log(document.childNodes[0].nodeName);
+        console.log(document.childNodes[0].nodeValue);
+		</script>
+	</body>
+</html>

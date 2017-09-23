@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>我是一个盒子</div>
+		<script>
+			//第一种，标准浏览器
+			var aDiv = document.getElementsByTagName('div')[0];
+//			console.log(getComputedStyle(aDiv).width );
+//			getComputedStyle(aDiv).height 
+//			getComputedStyle(aDiv).backgroundColor
+          //第二种，IE浏览器  currentStyle
+//          console.log(aDiv.currentStyle.width);
+            //封装函数
+            function getStyle(obj,att){
+            	if(obj.currentStyle){//没有属性不会报错
+            		return obj.currentStyle[att];
+            	}else{
+            		return getComputedStyle(obj)[att];
+            	}
+            }
+           console.log(getStyle(aDiv,'width'));
+           
+           function getStyle2(obj,att){
+            	if(window.getComputedStyle){//没有函数回报错，所以要加一个主人
+            		return getComputedStyle(obj)[att];
+            	}else{
+            		return obj.currentStyle[att];
+            	}
+            }
+               console.log(getStyle2(aDiv,'width'));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script>
+			//childNodes 包含孩子们的直接子节点，不包含孙级及以下节点
+			//只读属性
+			//标准浏览器：childNodes包含空白文本节点（回车）和元素节点
+			//非标准：只包含元素节点
+			var aUl=document.getElementsByTagName('ul')[0];
+			console.log(aUl.childNodes);
+//			for(var i=0;i<)
+           
+           
+           //更好的方法，解决兼容性问题children,一律不包含空白文本
+           //实现隔行变色
+           console.log(aUl.children);
+           for 
+		</script>
+	</body>
+</html>

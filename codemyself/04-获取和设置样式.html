@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="background-color: pink"></div>
+		<script>
+			var aDiv = document.getElementsByTagName('div')[0];
+			aDiv.style.width ='100px';//优先级比较高
+			//js可以直接操作（读取和设置）行间样式，但是无法获取样式表中的样式
+//			console.log(aDiv.style.height);//无法读取
+			//js提供一个方法获取样式表里的样式，标准浏览器中的方法(IE9,10，11),火狐，谷歌
+			//getComputedStyle(元素).属性
+			//获取优先级高的
+			console.log(getComputedStyle(aDiv).height);
+			console.log(getComputedStyle(aDiv).width);
+			//IE6、7、8不支持上面的方法
+			//有自己的方法//元素.currentStyle.属性  获取该元素的某属性
+//			console.log(aDiv.currentStyle.height);//谷歌不认识
+			//为了所有浏览器都能获取，以下if函数
+			//如果不认识，走else
+//			if(aDiv.currentStyle){//如果定义了，走if
+//					console.log(aDiv.currentStyle.height);
+//			}else{
+//				console.log(getComputedStyle(aDiv).height);
+//			}
+			//if太麻烦，封装函数
+			//没有该属性，未定义，函数不存在，会报错，变量未定义也会报错，定义了变量没有赋值，未定义
+			function getStyle(obj,attr){
+				if(obj.currentStyle){//如果定义了，走if
+					console.log(obj.currentStyle[attr]);//变量代替属性，加中括号，不能直接用.属性
+			}else{
+				console.log(getComputedStyle(obj)[attr]);
+			}
+			}
+			getStyle(aDiv,'height');
+			
+		</script>
+	</body>
+</html>

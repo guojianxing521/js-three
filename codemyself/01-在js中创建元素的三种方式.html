@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<div>box</div>
+			
+		<script>
+			//script标签可以body标签后边，执行时默认放在</body>标签前面
+			//创建元素的方式
+			//我们能否通过JS去往页面上生成标签
+			//document.write('你要输入的内容')//文档页面中写入内容
+//       	document.write('哈哈');
+//       	//
+//       	//缺点：无法往某一个元素（标签）添加内容
+//          document.write('<strong>哈哈哈</strong>'	);
+//         //会覆盖之前的内容
+//          //开启新的文档流
+//         var oBox = document.getElementsByTagName('div')[0];
+//         oBox.onclick = function(){
+//	         document.write('呵呵');
+//      }
+          //第二种方法
+          //元素.innerHTML  可以设置读取某个元素或标签中的内容
+          var oBox = document.getElementsByTagName('div')[0];
+//        oBox.innerHTML = '<em>你好</em>' ;//会把原来的标签干掉
+           oBox.innerHTML += '<em>你好</em>' ;//追加，原来的标签还在
+           //缺点：添加很多时比较费劲，dom是昂贵的
+//           for(var i=0;i<1000;i++){
+//           	  oBox.innerHTML+="<button>按钮</button>";
+//           	 }
+             //优化
+           var str='';
+           for(var i=0;i<3000;i++){
+           	str+="<button>按钮</button>";
+           }
+           //一次性读取
+           oBox.innerHTML = str;
+           //body title head比较特殊，可直接通过document获取
+          //第三种方法
+		</script>
+	</body>
+</html>

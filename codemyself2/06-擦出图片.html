@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div{
+				width: 51px;
+				height: 59px;
+				position: absolute;
+				background: url(pic.jpg) no-repeat;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<script>
+		var str='';
+		for(var i=0;i<100;i++){
+			var l = i%10*52;
+			var t = parseInt(i/10)*60;
+			str+= '<div class="div" style="left:'+l+'px;top:'+t+'px;background-position:'+-l+'px '+-t+'px;"></div>';
+		}
+		document.body.innerHTML=str;
+		
+		var aDiv = document.getElementsByTagName('div');
+		for(var i=0;i<100;i++){
+		
+		 aDiv[i].onmouseover = function(){
+			this.style.opacity = '1';
+		}
+		}
+		</script>
+		
+	</body>
+</html>

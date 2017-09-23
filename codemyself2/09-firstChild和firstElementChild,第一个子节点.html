@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+<ul>
+	<li>dfsdf</li>
+	<li>sdfsd</li>
+	<li>dsrfsd</li>
+	<li>esrfsed</li>
+	<li>erfes</li>
+</ul>
+<script>
+	var aUl = document.getElementsByTagName('ul')[0];
+	//标准包含文本和节点
+	//非标准只识别标签
+	console.log(aUl.firstChild);
+	
+	//标准浏览器中另外一个方法，只包含元素节点
+	
+	console.log(aUl.firstElementChild);
+	
+	//最后一个子节点
+		console.log(aUl.lastChild);
+		console.log(aUl.lastElementChild);
+//		previousSibling 前一个兄弟节点    previousElementSibling 前一个元素兄弟节点
+//		
+//		nextSibling  下一个兄弟节点     nextElementSibling 下一个兄弟元素节点 
+   var aLi = document.getElementsByTagName('li');
+   console.log(aLi[2].previousSibling);
+    console.log(aLi[2].previousElementSibling);
+//    var aLi = document.getElementsByTagName('li');
+   console.log(aLi[2].nextSibling);
+    console.log(aLi[2].nextElementSibling);
+</script>
+	</body>
+</html>
